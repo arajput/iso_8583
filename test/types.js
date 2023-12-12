@@ -102,6 +102,13 @@ test('should process alphanumeric with special characters (\'ans\') type', t => 
   t.true(types(options, data));
 });
 
+test('should process track1 (\'ans\') type', t => {
+  const options = {'ContentType': 'ans'};
+  const data = 'asdasdakjlk#1238719283#ASDASDLK-=-=-=-,.,.,/.,<><><><><>#   #  dfdf';
+
+  t.true(types(options, data));
+});
+
 test('should return false in case of \'ans\' type invalid data', t => {
   const options = {'ContentType': 'ans'};
   const data = 'AS.,ASDaadasd\x01';
